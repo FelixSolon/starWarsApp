@@ -20,9 +20,7 @@
       <a href="/"><button class="btn btn-danger btn-lg"><span class="fa fa-eye"></span> View Characters</button></a>
     </div>
     <div class="row">
-
       <div class="col-12">
-
         <div class="card">
           <div class="card-header">
             <h3><strong>Add Characters</strong></h3>
@@ -49,38 +47,18 @@
                 <label for="force-points">Force Points</label>
                 <input type="text" class="form-control" id="force-points">
               </div>
-
+              <br>
+              <div class="text-right">
+                <button type="submit" class="btn btn-primary btn-md" id="add-btn"><span class="fa fa-fire"></span> Add to the Force</button>
+              </div>
             </form>
-            <br>
-            <div class="text-right">
-              <button type="submit" class="btn btn-primary btn-md" id="add-btn"><span class="fa fa-fire"></span> Add to the Force</button>
-            </div>
           </div>
         </div>
-
       </div>
     </div>
   </div>
 
-  <script type="text/javascript">
-    // Question: What does this code do?
-    $("#add-btn").on("click", function(event) {
-      event.preventDefault();
-      var newCharacter = {
-        name: $("#name").val().trim(),
-        role: $("#role").val().trim(),
-        age: $("#age").val().trim(),
-        forcePoints: $("#force-points").val().trim()
-      };
-
-      // Question: What does this code do??
-      $.post("/api/characters", newCharacter)
-        .then(function(data) {
-          console.log("add.html", data);
-          alert("Adding character...");
-        });
-    });
-  </script>
+  <script type="text/javascript" src="/assets/js/add.js"></script>
 
 </body>
 </html>
